@@ -1,42 +1,118 @@
+/** CSS GENERAL **/
+
 @font-face {
-    font-family: 'BankGothic';
-    src: url('../fonts/BankGothicBold.eot');
-    src: url('../fonts/BankGothicBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/BankGothicBold.woff') format('woff'),
-        url('../fonts/BankGothicBold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'BankGothic';
+  src: url('../fonts/BankGothicBold.eot');
+  src: url('../fonts/BankGothicBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/BankGothicBold.woff') format('woff'),
+      url('../fonts/BankGothicBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 body, html{
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .fontShadow {
-    color: rgb(0, 0, 0);
-    font-family: 'BankGothic';
-    text-rendering: optimizelegibility;
-    font-size: 12em;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 
-        0 -1px 0 rgba(8, 8, 8, 0.15), 
-        0 2px 2px rgba(8, 8, 8, 0.15);
-    transition: all 0.3s ease-out;
-    will-change: text-shadow;
-    position: absolute;
-    top: 20%;
-    left: 25%;
+  color: #ffffff;
+  font-family: 'BankGothic';
+  text-rendering: optimizelegibility;
+  font-size: 12em;
+  font-weight: 700;
+  text-align: center;
+  text-shadow:
+      0 -1px 0 rgba(8, 8, 8, 0.15),
+      0 2px 2px rgba(8, 8, 8, 0.15);
+  will-change: text-shadow;
 }
 
-.fontShadow.animationHomePage {
-    transform: translate(1px,1px);
-    color: #ddd;
-    text-shadow: 0 -1px 0 #FFFFFF,
+/** SLIDER  **/
+
+.slider{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  margin: 0;
+  box-sizing: border-box; 
+  overflow: hidden;
+  background: #fff url("../images/sky_star.jpg") 0px 0px;
+  animation: sky 80s linear infinite;
+}
+
+.slider .slide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  padding: 5%;
+  margin: 0;
+  box-sizing: border-box; 
+  text-align: center;
+  transition: transform .3s ease-out;
+}
+
+.slider .slide.translate100{
+  transform: translateY(100%);
+}
+
+.slider .slide.translate200{
+  transform: translateY(200%);
+}
+
+/** SPLASH SCREEN D'INTRODUCTION **/
+
+.splash {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  padding: 5%;
+  background: #000000;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.splash .discoverHome{
+  position: absolute;
+  bottom: 20%;
+  left: calc(50% - 90px); 
+  width: 180px;
+  height: 60px;
+  border: 1px solid #eee7ff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 29px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.splash .discoverHome:hover{
+  border: 1px solid #fbff00;
+}
+
+.splash .fontShadow {
+  opacity: 0;
+  transition: all 0.5s ease-out .7s;
+}
+
+.splash .fontShadow.animationHomePage {
+  opacity: 1;
+  transform: translate(1px,1px);
+  color: #ddd;
+  text-shadow: 0 -1px 0 #FFFFFF,
     1px 1px 1px #666,
     2px 2px 10px rgba(255, 255, 255, 0.15),
     4px 5px 10px rgba(255, 255, 255, 0.15),
@@ -45,149 +121,141 @@ body, html{
     10px 20px 10px rgba(255, 255, 255, 0.15);
 }
 
-.discoverHome{
-    width: 180px;
-    position: absolute;
-    height: 60px;
-    border: 1px solid #eee7ff;
-    text-align: center;
-    text-decoration: none;
-    line-height: 29px;
-    text-transform: uppercase;
-    background-color: transparent;
-    color: white;
-    bottom: 20%;
-    left: 45%;
-    font-size: 15px;
-}
-
-.discoverHome:hover{
-    border: 1px solid #fbff00;
-}
-
-.container {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    background: #fff url("http://lab.legomushroom.com/___img/sky_star2.jpg") 0px 0px;
-    overflow-x: hidden;
-    margin: 0;
-    animation: sky 80s linear infinite;
-    position: relative;
-  }
-  
-  .planet {
-    bottom: -450px;
-    left: 35%;
-    position: absolute;
-    z-index: 10;
-    height: 450px;
-    width: 30%;
-    overflow-x: hidden;
-    margin: auto;
-    transform: scale(3);
-  }
-
-
-  .planet .shadow {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: -100%;
-    background-image: -webkit-radial-gradient(center center, 320px 320px, rgba(0,0,0,0) 40%, black 72%);
-  }
-
-  .planet .surface {
-    width: 200%;
-    height: 100%;
-    margin: 0 auto;
-    border-radius: 253px;
-    background: url("https://image.noelshack.com/fichiers/2017/51/1/1513616479-1024px-land-ocean-ice-cloud-hires.jpg");
-    animation: animatedBackground 20s linear infinite;
-    display: block;
-    background-repeat: repeat-x;
-    background-size: 50% 100%;
-    z-index: 3;
-  }
-  
-  
-  
-  .fade-Out {
-  
-    animation: fadeIn .5s ease-in 1 forwards;
-    opacity: 1;
-  }
-  
-  .is-paused {
-    animation-play-state: paused;
-  }
-
-  @keyframes fadeOut{
-    to {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes animatedBackground {
-    from { 
-      background-position: 0 0; 
-    }
-    to { 
-      background-position: -100% 0;
-    }
-  }
-
-
-/*.slider{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    background: #fff url("../images/sky_star.jpg") 0px 0px;
-    animation: sky 80s linear infinite;
-    margin: 0;
-}
-
-.slider .slide{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: -100%;
-    left: 0;
-}
-.slide.translate100{
-    transform: translateY(100%);
-}
-
-.slide.translate200{
-    transform: translateY(200%);
-}
-
-.splash{
-    position: fixed;
-    top: 0;
-    left:0;
-    right: 0;
-    bottom: 0;
-    background: #000000;
-    transition: opacity 0.3s ease;
-}
-
 .splash.hidden{
-    opacity: 0;
+  opacity: 0;
+}
+
+.splash.hidden.displayNone{
+  visibility: hidden;
+}
+
+
+/** ANIMATION LOGO SPACEX **/
+
+.fade-Out {
+  animation: fadeIn .5s ease-in 1 forwards;
+  opacity: 1;
+}
+
+.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes sky {
+  50% {
+     background-position: 318px 212px;
+  }
+  100% {
+     background-position: 635px 423px;
+  }
+}
+
+@keyframes fadeOut{
+  to {
+   opacity: 0;
+  }
+}
+
+@keyframes animatedBackground {
+  from {
+   background-position: 0 0;
+  }
+  to {
+   background-position: -100% 0;
+  }
+}
+
+/** JOUR 0 CONTENUE */
+
+.rocket
+{
+  position: absolute;
+  z-index: 20;
+  height: auto;
+  width: 10%;
+  top: 40%;
+  left: 45%;
+  animation: rocketMove 7s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+
+.planet {
+  position: absolute;
+  z-index: 2;
+  left: 30%;
+  bottom: 31%;
+  height: 450px;
+  width: 450px;
+  overflow: hidden;
+  margin: auto;
+  transform: translateY(25%);
+}
+
+.planet .shadow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  background-image: -webkit-radial-gradient(center center, 309px 309px, rgba(0,0,0,0) 40%, black 72%);
+}
+
+.planet .surface {
+  width: 100%;
+  height: 445px;
+  margin: 2px auto;
+  border-radius: 253px;
+  background-size: cover;
+  background: url("../images/surfaceEarth.jpg");
+  animation: spin 30s linear infinite;
 }
   
-.splash.hidden.displayNone{
-    visibility: hidden;
+
+@keyframes rocketMove {
+
+  0% {
+      transform: scale(1);
+  }
+
+  100%{
+    transform: translateX(200px) scale(4);
+  }
 }
-  */
+  
+  @keyframes spin {
+    from {background-position:0 0;}
+    to {background-position: 100% 0;}
+  }
+
+.fire 
+{
+  position: absolute;
+  background: linear-gradient(to right, yellow, red);
+  height: 15px;
+  width: 25px;
+  left: 45.9%;
+  top: 45.25%;
+  border-radius: 100%;
+  transform: rotateY(60deg);
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 5;
+}
 
 
-  @keyframes sky {
-    50% {
-       background-position: 318px 212px;
-    }
-    100% {
-       background-position: 635px 423px;
-    }
-   }
+@keyframes flicker {
+
+  0% { opacity: 0.9; }
+  30% { opacity: 0.67; }
+  40% { opacity: 1; }
+  80% { opacity: 0.68; }
+  88% { opacity: 0.98; }
+  90% { opacity: 0.64; }
+  93% { opacity: 0.9; }
+  95% { opacity: 0.69; }  
+  96% { opacity: 0.93; }
+  98% { opacity: 1; }
+  99% { opacity: 0.63; }
+
+}
