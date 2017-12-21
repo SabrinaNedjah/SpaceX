@@ -1,9 +1,8 @@
 <div class="rocket_1">
-<img class="fire_1" src="assets/images/jour1/fire-rocket.png" alt="fire">
+    <img class="fire_1" src="assets/images/jour1/fire-rocket.png" alt="fire">
 </div>
 
-<div class="moon_1">
-</div>
+<div class="moon_1"></div>
 
 <div class="infosEN_1">
     <h2>Jour 1</h2>
@@ -16,7 +15,6 @@
     </ul>
 </div>
 
-    <div class="planet_1">
-        <div class="surface_1"></div>
-        <div class="shadow_1"></div>
-    </div>
+<div class="planet_1">
+    <div class="surface"></div>
+</div>

@@ -8,43 +8,52 @@
   </head>
   <body>
     <div class="splash">
-        <img  class="logoSpaceX" src="assets/images/logoSpaceX.png" alt="Space X logo" height="20" width="130">
-        <p class="titleHome">welcome to the</p>
-        <p class="titleHome">space experience</p>
-        <hr>
-        <p class="subTitle">Maybe you want to know at what cost</p>
-        <p class="subTitle">you could travel towards Moon ?</p>
-        <p class="subTitle">Answer is here.</p>
-        <button href="#" class="discoverHome">Discover</button>
+      <img  class="logoSpaceX" src="assets/images/logoSpaceX.png" alt="Space X logo" height="20" width="130">
+      <p class="titleHome">welcome to the</p>
+      <p class="titleHome">space experience</p>
+      <hr>
+      <p class="subTitle">Maybe you want to know at what cost</p>
+      <p class="subTitle">you could travel towards Moon ?</p>
+      <p class="subTitle">Answer is here.</p>
+      <button href="#" class="discoverHome">Discover</button>
     </div>
 
-    
+
     <div class="slider">
-         <button class="BtnOn btn-hide"> <img src="assets/images/soundOn.png" alt="soundOn" width="50%%"></button>
-         <button class="BtnOff "><img src="assets/images/soundOff.png" alt="soundOff" width="50%%"></button>
-        <audio class="soundSpace">
-            <source src="assets/sound/audio.mp3" type="audio/ogg">
-        </audio>
-        <div class="slide">    
-            <?php require 'assets/pages/jour0.php'; ?>
-        </div>
-        <div class="slide">
-            <?php require 'assets/pages/jour0Bis.php'; ?>
-        </div>
-        <div class="slide">
-            <?php require 'assets/pages/jour1.php'; ?>
-        </div>
-        <div class="slide"> 
-            <div class="titleHome">Page3</div>
-        </div>
+      <button class="BtnOn btn-hide"> <img src="assets/images/soundOn.png" alt="soundOn" width="50%%"></button>
+      <button class="BtnOff "><img src="assets/images/soundOff.png" alt="soundOff" width="50%%"></button>
+      <audio class="soundSpace">
+          <source src="assets/sound/audio.mp3" type="audio/ogg">
+      </audio>
+      <div class="slide">
+           <?php require 'assets/pages/jour0.php'; ?>
+      </div>
+      <div class="slide">
+          <?php require 'assets/pages/jour0Bis.php'; ?>
+      </div>
+      <div class="slide">
+          <?php require 'assets/pages/jour1.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour2.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour3.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour4.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour5.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour6.php'; ?>
+      </div>
+      <div class="slide">
+         <?php require 'assets/pages/jour7.php'; ?>
+      </div>
     </div>
-    <canvas class="canvas">
-        </canvas>
-
-   
-
-  
-  <script src="assets/scripts/main.js"></script>
-
+    <canvas class="canvas"></canvas>
+    <script src="assets/scripts/main.js"></script>
   </body>
 </html>

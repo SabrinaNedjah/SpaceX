@@ -1,35 +1,25 @@
-/** SPLASH SCREEN **/
-/*$animationHomePage = document.querySelector('.splash .fontShadow')
-
-
-// Delay for animation
-setTimeout(function(){
-    $animationHomePage.className = "fontShadow animationHomePage"
-}, 0);
-
-*/
 const stopSound = document.querySelector('.stopSound')
 const $sound = document.querySelector('.soundSpace')
 const $btnON = document.querySelector(".BtnOn")
 const $btnOFF = document.querySelector(".BtnOff")
 
 
-
+/** SOUND **/
 
 $sound.play()
 
 
-$btnOFF.addEventListener("click", event  => 
+$btnOFF.addEventListener("click", event  =>
 {
-    
+
         // Button
         $btnON.classList.remove( 'btn-hide' );
         $btnOFF.classList.add( 'btn-hide' );
         $sound.pause()
-    
+
 });
 
-$btnON.addEventListener("click", event  => 
+$btnON.addEventListener("click", event  =>
 {
     event.preventDefault();
     //Button
@@ -38,17 +28,13 @@ $btnON.addEventListener("click", event  =>
     $sound.play();
 });
 
-
-
-
-
 $splash = document.querySelector('.splash')
 
 const btnDiscover = document.querySelector('.discoverHome');
 
 btnDiscover.addEventListener('click', function(e){
   e.preventDefault();
-
+  document.addEventListener('keydown', listenKeyboard)
   // On attend que l'animation d'opacité se termine et on cache complètement le splash.
   setTimeout(function(){
       $splash.className = "splash hidden displayNone"
@@ -57,7 +43,7 @@ btnDiscover.addEventListener('click', function(e){
       // sur la première slide
       listenKeyboard({
         preventDefault: function () {},
-        keyCode: 38
+        keyCode: 39
       });
   }, 300);
 
@@ -65,8 +51,9 @@ btnDiscover.addEventListener('click', function(e){
   $splash.className = "splash hidden"
 });
 
+
 /** SLIDER **/
-document.addEventListener('keydown', listenKeyboard)
+
 
 let slideVisible = -1;
 const slides = document.querySelectorAll('.slide')
@@ -117,10 +104,12 @@ function listenKeyboard(event) {
      // On rend la slide courante visible.
      slides[slideVisible].className = 'slide translate100'
     }
+
+  
   }
 }
 
-
+/** STAR BACKGROUND **/
 function fn() {
   window.requestAnimFrame = (function () {
       return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -200,3 +189,23 @@ function fn() {
   animation();
 }
 fn();
+
+/** COUNT EFFECT **/
+const count = document.querySelector('.count');
+
+var counter = 0;
+var counterFinal = count.innerHTML;
+var counterInterval = counterFinal / 400;
+
+console.log("Interval", counterInterval);
+
+const interval = setInterval(function() {
+  counter = counter + counterInterval;
+
+  if (Math.ceil(parseInt(counter)) >= counterFinal) {
+    count.innerHTML = counterFinal;
+    return clearInterval(interval);
+  }
+
+  count.innerHTML = Math.ceil(parseInt(counter));
+}, 1);
