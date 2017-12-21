@@ -1,9 +1,7 @@
 <div class="moon_4"></div>
-
 <div class="rocket_4">
     <img class="fire_4" src="assets/images/jour1/fire-rocket.png" alt="fire">   
 </div>
-
 <div class="infosEN_1">
     <h2>Jour 4</h2>
     <ul>
@@ -14,7 +12,6 @@
         <li>Pression ressentie:  10¯7 PA.</li>
     </ul>
 </div>
-
 <div class="planet_4">
     <div class="surface"></div>
 </div>

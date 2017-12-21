@@ -2,21 +2,69 @@
   width: device-width; /* largeur du viewport */
   zoom: 1; /* zoom initial à 1.0 */
 }
-/** CSS GENERAL **/
+
+/** FONT  **/
 @font-face {
-  font-family: 'Aaargh';
-  src: url('../fonts/Aaargh.ttf');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Aaargh';
+	src: url('../fonts/Aaargh.eot');
+	src: local('☺'), url('../fonts/Aaargh.woff') format('woff'), url('../fonts/Aaargh.ttf') format('truetype'), url('../fonts/Aaargh.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'BonvenoCF';
-  src: url('../fonts/BonvenoCF-Light.otf');
-  font-weight: 300;
-  font-style: normal;
+	font-family: 'BonvenoCF';
+	src: url('../fonts/BonvenoCF-Light.eot');
+	src: local('☺'), url('../fonts/BonvenoCF-Light.woff') format('woff'), url('../fonts/BonvenoCF-Light.ttf') format('truetype'), url('../fonts/BonvenoCF-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
+/** KEYFRAMES  **/
+@keyframes elastic {
+  0% {
+   background-size: 100% 100%;
+  }
+
+  50% {
+   background-size: 140% 100%;
+  }
+
+  100% {
+   background-size: 100% 100%;
+  }
+}
+
+@keyframes rocketMove {
+  0% {
+      transform: scale(1);
+  }
+
+  100%{
+    transform: translateX(200px) scale(4);
+  }
+}
+
+@keyframes movimiento {
+  0% { background-position:0 0 }
+  100% { background-position:200% 0 }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.9; }
+  30% { opacity: 0.67; }
+  40% { opacity: 1; }
+  80% { opacity: 0.68; }
+  88% { opacity: 0.98; }
+  90% { opacity: 0.64; }
+  93% { opacity: 0.9; }
+  95% { opacity: 0.69; }
+  96% { opacity: 0.93; }
+  98% { opacity: 1; }
+  99% { opacity: 0.63; }
+}
+
+/** HTML BODY **/
 body, html {
   width: 100%;
   height: 100%;
@@ -24,6 +72,8 @@ body, html {
   padding: 0;
   overflow: hidden;
 }
+
+/** INDEX.PHP **/
 .logoSpaceX {
   display: inherit;
   position: absolute;
@@ -54,8 +104,8 @@ hr {
   margin: 0;
   font-size: 1.3em;
 }
-/** SLIDER  **/
 
+/** SLIDER  **/
 .slider {
   position: absolute;
   width: 100%;
@@ -66,6 +116,9 @@ hr {
   overflow: hidden;
 }
 
+.slider .btn-hide {
+  visibility: hidden;
+}
 
 .slider .slide {
   position: absolute;
@@ -91,8 +144,7 @@ hr {
   opacity: 0;
 }
 
-/** SPLASH SCREEN D'INTRODUCTION **/
-
+/** SPLASH SCREEN INTRODUCTION **/
 .splash {
   z-index: 10000;
   position: fixed;
@@ -101,9 +153,7 @@ hr {
   right: 0;
   bottom: 0;
   padding: 7%;
-  background-image:url('../images/spaceSliderSplash.jpg');
   text-align: center;
-  transition: opacity 0.3s ease;
 }
 
 .splash .discoverHome {
@@ -128,8 +178,6 @@ hr {
   border: 1px solid #fbff00;
 }
 
-
-
 .splash.hidden {
   opacity: 0;
 }
@@ -138,25 +186,7 @@ hr {
   visibility: hidden;
 }
 
-
-
-
-@keyframes elastic {
-  0% {
-   background-size: 100% 100%;
-  }
-
-  50% {
-   background-size: 140% 100%;
-  }
-
-  100% {
-   background-size: 100% 100%;
-  }
-}
-
 /** JOUR 0 CONTENUE */
-
 .rocket {
   position: absolute;
   z-index: 20;
@@ -165,6 +195,8 @@ hr {
   top: 40%;
   left: 35%;
   animation: rocketMove 7s ease;
+  -webkit-animation: rocketMove 7s ease;
+  -moz-animation: rocketMove 7s ease;
   animation-fill-mode: forwards;
   animation-delay: 3s;
 }
@@ -179,8 +211,6 @@ hr {
   transform: translateY(25%);
 }
 
-
-
 .surface {
   background:url('../images/earthSurface.jpg');
   background-size:cover;
@@ -189,6 +219,8 @@ hr {
   width:500px;
   height:500px;
   animation: movimiento 22s linear 0s infinite;
+  -webkit-animation: movimiento 22s linear 0s infinite;
+  -moz-animation: movimiento 22s linear 0s infinite;
   box-shadow:0 0 25px RGBA(0,0,0, 0.10),
              -8px -8px 15px #000 inset,
              2px 2px 25px #000 inset,
@@ -198,40 +230,6 @@ hr {
   transform:rotateX(6deg) rotateY(6deg) rotateZ(6deg);
 
 }
-
-
-@keyframes rocketMove {
-  0% {
-      transform: scale(1);
-  }
-
-  100%{
-    transform: translateX(200px) scale(4);
-  }
-}
-
-@keyframes movimiento {
-  0% { background-position:0 0 }
-  100% { background-position:200% 0 }
-}
-
-
-@keyframes flicker {
-
-  0% { opacity: 0.9; }
-  30% { opacity: 0.67; }
-  40% { opacity: 1; }
-  80% { opacity: 0.68; }
-  88% { opacity: 0.98; }
-  90% { opacity: 0.64; }
-  93% { opacity: 0.9; }
-  95% { opacity: 0.69; }
-  96% { opacity: 0.93; }
-  98% { opacity: 1; }
-  99% { opacity: 0.63; }
-
-}
-
 
 /** JOUR 0BIS CONTENUE **/
 .infoFR_0 {
@@ -243,57 +241,61 @@ hr {
 }
 
 .infoFR_0 ul {
-    margin: auto;
-    list-style: none;
-    padding: 0;
-    font-family: arial, sans-serif;
-    width: 60%;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+  font-family: arial, sans-serif;
+  width: 60%;
 }
 
 .rocket_2_0bis {
-    z-index: 10;
-    position: absolute;
-    top: 55%;
-    left: 15%;
-    width: 20%;
+  z-index: 10;
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  width: 20%;
 }
 
 .fire_1_0_0bis {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 12.4%;
-    top: 65%;
-    border-radius: 100%;
-    transform: rotateX(30deg);
-    animation: flicker 0.3s ease infinite;
-    -webkit-animation: flicker 0.3s ease infinite;
-    -moz-animation: flicker 0.3s ease infinite;
-    z-index: 15;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 12.4%;
+  top: 65%;
+  border-radius: 100%;
+  transform: rotateX(30deg);
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 15;
 }
 
 .fire_1_1_0bis {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 13.5%;
-    top: 67.7%;
-    transform: rotateX(30deg);
-    border-radius: 100%;
-    animation: flicker 0.3s ease infinite;
-    z-index: 15;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 13.5%;
+  top: 67.7%;
+  transform: rotateX(30deg);
+  border-radius: 100%;
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 15;
 }
 
 .fire_1_0bis {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 15%;
-    top: 69.9%;
-    transform: rotateX(30deg);
-    border-radius: 100%;
-    animation: flicker 0.3s ease infinite;
-    z-index: 15;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 15%;
+  top: 69.9%;
+  transform: rotateX(30deg);
+  border-radius: 100%;
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 15;
 }
 
 .planet_2 {
@@ -308,7 +310,6 @@ hr {
 }
 
 /** JOUR 1 CONTENUE **/
-
 .rocket_1 {
   left: 35%;
   top: 36%;
@@ -327,6 +328,8 @@ hr {
   top: 65.8%;
   transform: rotateZ(48deg) rotateX(21deg);
   animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
 }
 
 .infosEN_1 {
@@ -359,7 +362,6 @@ h2 {
   left: 50%;
 }
 
-
 .planet_1 {
   position: absolute;
   z-index: 1;
@@ -370,8 +372,8 @@ h2 {
   overflow-y: hidden;
   transform: scale(3)
 }
-/** JOUR 2 CONTENUE **/
 
+/** JOUR 2 CONTENUE **/
 .moon_2 {
   width: 350px;
   height: 350px;
@@ -394,20 +396,21 @@ h2 {
 }
 
 .fire_2 {
-    position: absolute;
-    height: 50%;
-    width: auto;
-    left: 16%;
-    top: 84.8%;
-    border-radius: 100%;
-    transform: rotateZ(48deg) rotateX(52deg);
-    animation: flicker 0.3s ease infinite;
-    z-index: 2;
+  position: absolute;
+  height: 50%;
+  width: auto;
+  left: 16%;
+  top: 84.8%;
+  border-radius: 100%;
+  transform: rotateZ(48deg) rotateX(52deg);
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 2;
 }
 
 
 /** JOUR 3 CONTENUE **/
-
 .moon_3 {
   width: 700px;
   height: 700px;
@@ -420,32 +423,31 @@ h2 {
 }
 
 .rocket_3 {
-    right: 35%;
-    top: 50%;
-    transform: rotateZ(-57deg);
-    background-size: cover;
-    background-image: url('../images/jour1/rocket.png');
-    width: 8%;
-    height: 25%;
-    position: absolute;
+  right: 35%;
+  top: 50%;
+  transform: rotateZ(-57deg);
+  background-size: cover;
+  background-image: url('../images/jour1/rocket.png');
+  width: 8%;
+  height: 25%;
+  position: absolute;
 }
-
 
 .fire_3 {
-    position: absolute;
-    height: 60%;
-    width: auto;
-    left: -4%;
-    top: 64.8%;
-    border-radius: 100%;
-    transform: rotateZ(48deg) rotateX(21deg);
-    animation: flicker 0.3s ease infinite;
-    z-index: 2;
+  position: absolute;
+  height: 60%;
+  width: auto;
+  left: -4%;
+  top: 64.8%;
+  border-radius: 100%;
+  transform: rotateZ(48deg) rotateX(21deg);
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
+  z-index: 2;
 }
 
-
 /** JOUR 4 CONTENUE **/
-
 .moon_4 {
   width: 10%;
   height: 24%;
@@ -477,6 +479,8 @@ h2 {
   border-radius: 100%;
   transform: rotateZ(48deg) rotateX(21deg);
   animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
   z-index: 2;
 }
 
@@ -490,25 +494,26 @@ h2 {
 }
 
 /** JOUR 5 CONTENUE **/
-
 .rocket_5 {
-    left: 40%;
-    top: 50%;
-    transform: rotateX(5deg);
-    background-size: cover;
-    background-image: url('../images/jour1/rocket.png');
-    width: 14%;
-    height: 31%;
-    position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: rotateX(5deg);
+  background-size: cover;
+  background-image: url('../images/jour1/rocket.png');
+  width: 14%;
+  height: 31%;
+  position: absolute;
 }
 
 .fire_5 {
-    position: absolute;
-    height: 60%;
-    left: 8%;
-    top: 80.8%;
-    transform: rotateZ(48deg) rotateX(21deg);
-    animation: flicker 0.3s ease infinite;
+  position: absolute;
+  height: 60%;
+  left: 8%;
+  top: 80.8%;
+  transform: rotateZ(48deg) rotateX(21deg);
+  animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
 }
 
 .moon_5 {
@@ -535,13 +540,14 @@ h2 {
   width: 100px;
   height: 100px;
   animation: movimiento 22s linear 0s infinite;
+  -webkit-animation: movimiento 22s linear 0s infinite;
+  -moz-animation: movimiento 22s linear 0s infinite;
   box-shadow: 0 0 25px RGBA(0,0,0, 0.10), -8px -8px 15px #000 inset, 2px 2px 25px #000 inset, -45px -45px 25px RGBA(0,0,0, 0.5) inset, 25px 25px 45px RGBA(0,0,0, 0.45) inset;
   margin: 6em auto;
   transform: rotateX(6deg) rotateY(6deg) rotateZ(6deg);
 }
 
 /** JOUR 6 CONTENUE **/
-
 .planet_6 {
   position: absolute;
   z-index: 2;
@@ -551,8 +557,7 @@ h2 {
   transform: scale(0.3)
 }
 
-.rocket_6
-{
+.rocket_6 {
   z-index: 10;
   position: absolute;
   top: 50%;
@@ -560,8 +565,7 @@ h2 {
   width: 20%;
 }
 
-.fire_6
-{
+.fire_6 {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -570,20 +574,12 @@ h2 {
   transform: rotateX(30deg);
   border-radius: 100%;
   animation: flicker 0.3s ease infinite;
+  -webkit-animation: flicker 0.3s ease infinite;
+  -moz-animation: flicker 0.3s ease infinite;
   z-index: 15;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/** BTN SOUND **/
 .slider .BtnOn {
   outline: none;
   background: transparent;
@@ -609,8 +605,3 @@ h2 {
   height: 25%;
   margin: 8px 8px;
 }
-
-.slider .btn-hide {
-    visibility: hidden;
-}
-

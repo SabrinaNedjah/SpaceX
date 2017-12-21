@@ -13,15 +13,15 @@
       <p class="titleHome">space experience</p>
       <hr>
       <p class="subTitle">Maybe you want to know at what cost</p>
-      <p class="subTitle">you could travel towards Moon ?</p>
+      <p class="subTitle">you could travel to the Moon ?</p>
       <p class="subTitle">Answer is here.</p>
       <button href="#" class="discoverHome">Discover</button>
     </div>
 
 
     <div class="slider">
-      <button class="BtnOn btn-hide"> <img src="assets/images/soundOn.png" alt="soundOn" width="50%%"></button>
-      <button class="BtnOff "><img src="assets/images/soundOff.png" alt="soundOff" width="50%%"></button>
+      <button class="BtnOn "> <img src="assets/images/soundOn.png" alt="soundOn" width="50%%"></button>
+      <button class="BtnOff btn-hide"><img src="assets/images/soundOff.png" alt="soundOff" width="50%%"></button>
       <audio class="soundSpace">
           <source src="assets/sound/audio.mp3" type="audio/ogg">
       </audio>
@@ -45,12 +45,6 @@
       </div>
       <div class="slide">
          <?php require 'assets/pages/jour5.php'; ?>
-      </div>
-      <div class="slide">
-         <?php require 'assets/pages/jour6.php'; ?>
-      </div>
-      <div class="slide">
-         <?php require 'assets/pages/jour7.php'; ?>
       </div>
     </div>
     <canvas class="canvas"></canvas>

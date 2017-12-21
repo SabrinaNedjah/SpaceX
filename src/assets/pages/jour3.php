@@ -2,7 +2,6 @@
 <div class="rocket_3">
     <img class="fire_3" src="assets/images/jour1/fire-rocket.png" alt="fire">
 </div>
-
 <div class="infosEN_1">
     <h2>Jour 3</h2>
     <ul>

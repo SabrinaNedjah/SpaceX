@@ -1,9 +1,7 @@
 <div class="rocket_2">
-<img class="fire_2" src="assets/images/jour1/fire-rocket.png" alt="fire">
+    <img class="fire_2" src="assets/images/jour1/fire-rocket.png" alt="fire">
 </div>
-
 <div class="moon_2"></div>
-
 <div class="infosEN_1">
     <h2>Jour 2</h2>
     <ul>
